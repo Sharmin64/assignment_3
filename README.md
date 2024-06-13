@@ -10,5 +10,5 @@
 
 
    `rgb(9, 105, 218)`>For handling error here 
-   [x]eslint set up 
-   [x]prettier set up globally 
+   -[x]eslint set up 
+   -[x]prettier set up globally 
