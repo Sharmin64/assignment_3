@@ -1,9 +1,17 @@
 import express from "express";
 import { AuthValidation } from "./auth.validation";
-import validateRequest from "../../mddlewares/validateRequest";
 
 const router = express.Router();
 
+import { AuthController } from "./auth.controller";
+import validateRequest from "../../mddlewares/validateRequest";
+
+// sign up for the user
+router.post(
+  "/signup",
+  validateRequest(AuthValidation.loginValidationSchema),
+  AuthController.signUpUser
+);
 // router.post(
 //   '/login',
 //   validateRequest(AuthValidation.loginValidationSchema),

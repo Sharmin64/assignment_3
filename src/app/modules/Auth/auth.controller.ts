@@ -1,55 +1,34 @@
-// import httpStatus from 'http-status';
-// import config from '../../config';
-// import catchAsync from '../../utils/catchAsync';
-// import sendResponse from '../../utils/sendResponse';
-// import { AuthServices } from './auth.service';
+import config from "../../config";
+import catchAsync from "../../utils/catchAsync";
+import { AuthServices } from "./auth.service";
 
-// const loginUser = catchAsync(async (req, res) => {
-//   const result = await AuthServices.loginUser(req.body);
-// //   const { refreshToken, accessToken, needsPasswordChange } = result;
+const signUpUser = catchAsync(async (req, res) => {
+  const result = await AuthServices.signUp(req.body);
 
-// //   res.cookie('refreshToken', refreshToken, {
-// //     secure: config.NODE_ENV === 'production',
-// //     httpOnly: true,
+  res.status(200).json({
+    success: true,
+    message: "User registered successfully!",
+    data: result,
+  });
+});
+
+// const login = catchAsync(async (req, res) => {
+//   const { accessToken, refreshToken } = await AuthServices.login(req.body);
+
+//   res.cookie("refreshToken", refreshToken, {
+//     httpOnly: true,
+//     secure: config.NODE_ENV === "production",
 //   });
 
-//   sendResponse(res, {
-//     statusCode: httpStatus.OK,
+//   res.status(200).json({
 //     success: true,
-//     message: 'User is logged in succesfully!',
+//     message: "User logged in successfully!",
 //     data: {
 //       accessToken,
-//       needsPasswordChange,
 //     },
 //   });
 // });
 
-// const changePassword = catchAsync(async (req, res) => {
-//   const { ...passwordData } = req.body;
-
-//   const result = await AuthServices.changePassword(req.user, passwordData);
-//   sendResponse(res, {
-//     statusCode: httpStatus.OK,
-//     success: true,
-//     message: 'Password is updated succesfully!',
-//     data: result,
-//   });
-// });
-
-// const refreshToken = catchAsync(async (req, res) => {
-//   const { refreshToken } = req.cookies;
-//   const result = await AuthServices.refreshToken(refreshToken);
-
-//   sendResponse(res, {
-//     statusCode: httpStatus.OK,
-//     success: true,
-//     message: 'Access token is retrieved succesfully!',
-//     data: result,
-//   });
-// });
-
-// export const AuthControllers = {
-//   loginUser,
-//   changePassword,
-//   refreshToken,
-// };
+export const AuthController = {
+  signUpUser,
+};
