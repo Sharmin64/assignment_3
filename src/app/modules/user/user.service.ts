@@ -1,29 +1,44 @@
-import catchAsync from "../../utils/catchAsync";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// import catchAsync from "../../utils/catchAsync";
 
-// const createUserIntoDb = catchAsync(async (req, res) => {
-//   // const { password, student: studentData } = req.body;
-//   // const result = await UserServices.createStudentIntoDB(password, studentData);
-//   // sendResponse(res, {
-//   //   statusCode: httpStatus.OK,
-//   //   success: true,
-//   //   message: 'Student is created succesfully',
-//   //   data: result,
-//   // });
-// });
+import config from "../../config";
+import { IUser, PartialUser } from "./user.interface";
+import { User } from "./user.model";
+import jwt from "jsonwebtoken";
 
-const createAdminIntoDB = catchAsync(async (req, res) => {
-  // const { password, admin: adminData } = req.body;
-  // const result = await UserServices.createAdminIntoDB(password, adminData);
-  // sendResponse(res, {
-  //   statusCode: httpStatus.OK,
-  //   success: true,
-  //   message: 'Admin is created succesfully',
-  //   data: result,
-  // });
-});
+const signupUserInDB = async (data: IUser) => {
+  const result = await User.create(data);
+  return result;
+};
 
-export const UserControllers = {
-  // createUserIntoDb,
+const passwordCompare = async (
+  password: string,
+  hashedPassword: string
+): Promise<boolean> => {
+  const isMatch = User.comparePassword(password, hashedPassword);
+  return isMatch;
+};
 
-  createAdminIntoDB,
+const tokenProvider = async (data: PartialUser): Promise<string> => {
+  const payload = { ...data };
+  // const secretKey = "ro8BS6Hiivgzy8Xuu09JDjlNLnSLldY5";
+  const secretKey = config.jwt_access_secret;
+
+  const token = jwt.sign(payload, secretKey as string, {
+    expiresIn: "7d",
+  });
+
+  return token;
+};
+
+const findUserByEmail = async (email: string): Promise<IUser | null> => {
+  const userExist = await User.findOne({ email });
+  return userExist;
+};
+
+export const UserServices = {
+  signupUserInDB,
+  passwordCompare,
+  tokenProvider,
+  findUserByEmail,
 };
