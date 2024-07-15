@@ -1,6 +1,6 @@
-import { Types } from "mongoose";
+import { Document, Types } from "mongoose";
 
-export type TBooking = {
+interface IBooking extends Document {
   customer: Types.ObjectId;
   service: Types.ObjectId;
   slot: Types.ObjectId;
@@ -19,4 +19,8 @@ export type TBooking = {
   vehicleModel: string;
   manufacturingYear: number;
   registrationPlate: string;
-};
+}
+
+export type PartialBookings = Partial<IBooking>;
+
+export default IBooking;

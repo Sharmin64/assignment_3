@@ -11,8 +11,6 @@ router.post(
   UserController.userSignup
 );
 
-// route('/login').post(userLogin);
-
-// router.get("/", UserController.getAllUsers);
+router.post("/login", UserController.userLogin);
 
 export const UserRoute = router;

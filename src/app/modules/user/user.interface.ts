@@ -1,25 +1,4 @@
-// import { USER_ROLE } from "./user.constant";
-
-// export type TUser = {
-//   name: string;
-//   email: string;
-//   password: string;
-//   phone: string;
-//   role: keyof typeof USER_ROLE;
-//   address: string;
-// };
-
-// ?test
 import { Document, Model } from "mongoose";
-
-// export interface IUser extends Document {
-//   name: string;
-//   email: string;
-//   password: string;
-//   phone: string;
-//   role: "admin" | "user";
-//   address: string;
-// }
 
 export interface IUser extends Document {
   name: string;
