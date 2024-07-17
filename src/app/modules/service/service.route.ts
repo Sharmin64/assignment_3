@@ -7,9 +7,9 @@ router.get("/");
 router.get("/:id");
 
 // router.patch(
-//   '/:id',
+//   "/:id",
 //   validateRequest(updateStudentValidationSchema),
-//   StudentControllers.updateStudent,
+//   StudentControllers.updateStudent
 // );
 
 router.delete("/:id");

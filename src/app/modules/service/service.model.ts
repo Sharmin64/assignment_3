@@ -1,7 +1,7 @@
 import { Schema, model } from "mongoose";
-import { TService } from "./service.interface";
+import { IService } from "./service.interface";
 
-const serviceSchema = new Schema<TService>({
+const serviceSchema = new Schema<IService>({
   name: { type: String, required: true },
   description: { type: String, required: true },
   price: { type: Number, required: true },
@@ -9,4 +9,4 @@ const serviceSchema = new Schema<TService>({
   isDeleted: { type: Boolean, required: true, default: false },
 });
 
-export const Service = model<TService>("Service", serviceSchema);
+export const Service = model<IService>("Service", serviceSchema);

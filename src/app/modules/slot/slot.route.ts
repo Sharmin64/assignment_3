@@ -6,12 +6,6 @@ router.get("/");
 
 router.get("/:id");
 
-// router.patch(
-//   '/:id',
-//   validateRequest(updateStudentValidationSchema),
-//   StudentControllers.updateStudent,
-// );
-
 router.delete("/:id");
 
 export const SlotRoute = router;
