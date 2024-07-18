@@ -1,16 +1,16 @@
-// import config from "../../config";
-import catchAsync from "../../utils/catchAsync";
-import { AuthServices } from "./auth.service";
+// // import config from "../../config";
+// import catchAsync from "../../utils/catchAsync";
+// import { AuthServices } from "./auth.service";
 
-const signUpUser = catchAsync(async (req, res) => {
-  const result = await AuthServices.signUp(req.body);
+// const signUpUser = catchAsync(async (req, res) => {
+//   const result = await AuthServices.signUp(req.body);
 
-  res.status(200).json({
-    success: true,
-    message: "User registered successfully!",
-    data: result,
-  });
-});
+//   res.status(200).json({
+//     success: true,
+//     message: "User registered successfully!",
+//     data: result,
+//   });
+// });
 
 // const login = catchAsync(async (req, res) => {
 //   const { accessToken, refreshToken } = await AuthServices.login(req.body);
@@ -29,6 +29,6 @@ const signUpUser = catchAsync(async (req, res) => {
 //   });
 // });
 
-export const AuthController = {
-  signUpUser,
-};
+// export const AuthController = {
+//   signUpUser,
+// };

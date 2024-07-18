@@ -9,12 +9,12 @@ export const existedServiceInDb = async (serviceId: string) => {
   return isServiceExist;
 };
 
-export const createSlots = async (totalSlots: Array<PartialSlot>) => {
+export const createSlotsInDb = async (totalSlots: Array<PartialSlot>) => {
   const result = await Slot.create(totalSlots);
   return result;
 };
 
-export const availableSlots = async (query: AnyObject) => {
+export const availableSlotsInDb = async (query: AnyObject) => {
   const result = await Slot.find(query);
   return result;
 };
