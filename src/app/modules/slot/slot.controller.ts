@@ -4,9 +4,14 @@ import AppError from "../../errors/AppError";
 import catchAsync from "../../utils/catchAsync";
 import slotValidation from "./slot.validation";
 import mongoose from "mongoose";
-import { createSlotsInDb, existedServiceInDb } from "./slot.service";
+import {
+  availableSlotsInDb,
+  createSlotsInDb,
+  existedServiceInDb,
+} from "./slot.service";
 import totalSlotCount from "./utils/totalSlot";
 import sendResponse from "../../utils/sendResponse";
+import { createSearchQuery } from "./utils/searchQuery";
 
 export const createSlots = catchAsync(async (req, res, next) => {
   const slotData = await req.body;
@@ -50,6 +55,25 @@ export const createSlots = catchAsync(async (req, res, next) => {
     statusCode: httpStatus.OK,
     success: true,
     message: "Slots created successfully",
+    data: result,
+  });
+});
+
+export const availableSlots = catchAsync(async (req, res, next) => {
+  const serviceId = req.params.serviceId;
+  const query = req.query;
+
+  const finalQuery = await createSearchQuery(serviceId, query);
+
+  const result = await availableSlotsInDb(finalQuery);
+  if (!result) {
+    return next(new AppError(httpStatus.NOT_FOUND, "No Data Found"));
+  }
+
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: "available slots retrieved successfully",
     data: result,
   });
 });

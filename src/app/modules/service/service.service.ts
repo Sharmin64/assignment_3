@@ -4,13 +4,9 @@ import { Service } from "./service.model";
 import { PartialService } from "./service.interface";
 
 const createServiceInDB = async (data: AnyObject) => {
-  const result = await Service.create(data);
+  const result = await Service.create({ ...data });
   return result;
 };
-// const createService = async (data: PartialService) => {
-//   const result = await Service.create({ ...data });
-//   return result;
-// };
 
 const getServiceByIdFromDB = async (
   id: string

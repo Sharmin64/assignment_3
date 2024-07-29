@@ -1,17 +1,22 @@
 import express from "express";
+import { ServiceControllers } from "./service.controller";
+import { authMiddleware } from "../../mddlewares/authMiddleware";
+import { isAdmin } from "../../mddlewares/isAdmin";
 
 const router = express.Router();
 
-router.get("/");
+router.post("/", ServiceControllers.createService, authMiddleware, isAdmin);
+router.get("/", ServiceControllers.getAllServices);
 
-router.get("/:id");
+router.get("/:id?", ServiceControllers.getSingleService);
 
-// router.patch(
-//   "/:id",
-//   validateRequest(updateStudentValidationSchema),
-//   StudentControllers.updateStudent
-// );
+router.put("/:id", ServiceControllers.updateService, authMiddleware, isAdmin);
 
-router.delete("/:id");
+router.delete(
+  "/:id",
+  ServiceControllers.deleteService,
+  authMiddleware,
+  isAdmin
+);
 
 export const ServiceRoute = router;
