@@ -28,7 +28,7 @@ const createBookings = catchAsync(async (req, res, next) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: " retrieved successfully",
+    message: "Bookings retrieved successfully",
     data: result,
   });
 });

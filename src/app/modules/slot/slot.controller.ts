@@ -62,10 +62,13 @@ export const createSlots = catchAsync(async (req, res, next) => {
 export const availableSlots = catchAsync(async (req, res, next) => {
   const serviceId = req.params.serviceId;
   const query = req.query;
+  // console.log(query);
 
   const finalQuery = await createSearchQuery(serviceId, query);
 
   const result = await availableSlotsInDb(finalQuery);
+  // console.log(result);
+
   if (!result) {
     return next(new AppError(httpStatus.NOT_FOUND, "No Data Found"));
   }

@@ -5,7 +5,7 @@ import { isAdmin } from "../../mddlewares/isAdmin";
 
 const router = express.Router();
 
-router.post("/slots", authMiddleware, isAdmin, createSlots);
+router.post("/services/slots", authMiddleware, isAdmin, createSlots);
 
 router.get("/slots/availability/:serviceId?", availableSlots);
 

@@ -21,7 +21,7 @@ const createService = catchAsync(async (req, res, next) => {
   sendResponse(res, {
     statusCode: httpStatus.OK,
     success: true,
-    message: "Booking Successfull",
+    message: "Service created Successfully",
     data: result,
   });
 });

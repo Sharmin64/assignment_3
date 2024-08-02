@@ -21,7 +21,6 @@ const passwordCompare = async (
 
 const tokenProvider = async (data: PartialUser): Promise<string> => {
   const payload = { ...data };
-  // const secretKey = "ro8BS6Hiivgzy8Xuu09JDjlNLnSLldY5";
   const secretKey = config.jwt_access_secret;
 
   const token = jwt.sign(payload, secretKey as string, {
