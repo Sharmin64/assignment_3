@@ -5,7 +5,18 @@
 
 # Project Title : Assignment_three
 
-### project set up 
+# project set up : 
+- clone this project from here: [-Github-] (https://github.com/Sharmin64/assignment_3.git)
+
+```javascript
+git clone "repo link"
+cd "repo directory"
+npm install
+npm install --force
+npm run start:dev
+```
+
+### project overview
 
 		---`#0969DA`>this is the project of variant ( car wash booking ) 
         ---based on the technology of Typescript , Mongoose , Express, . First of all set up the project initialising with ** npm init -y** . After that install mongoose , typescript , express, dotenv for env file , cors . and after that connect the project with mongodb server with url and for running locally use PORT 5000
@@ -36,15 +47,30 @@
   ## what I will provide 
 
 
-  ** Live link:-- 
+  ** Live link:-- https://car-washing-backend-project-2mpgngmu0-sharmin64s-projects.vercel.app/
   ** Github link:--https://github.com/Sharmin64/assignment_3
   ** Project presentation vedio: --  unable to make the vedio because of microphone issues of headphone
 
   ### *** Environment Variable ***
 
-  - PORT-5000
+  - PORT= "5000"
+  - MONGODB_URI="mongodb+srv://car-washer:L3iFT6KSF319Fbxl@cluster0.xol1uc7.mongodb.net/car-washing-project?retryWrites=true&w=majority&appName=Cluster0"
 
-  - MONGODB_URI=mongodb+srv://car-washer:L3iFT6KSF319Fbxl@cluster0.xol1uc7.mongodb.net/car-washing-project?retryWrites=true&w=majority&appName=Cluster0
-
-
+# Technologies I used in this project :
+ <div style="">
+        <ol style=" display: flex;list-style-type: none;">
+        <li style=" background-color: #2F74C0; color: white; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">Typescript</li>
+        <li style=" background-color: darkgreen; color: white; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">Node.js</li>
+        <li style=" background-color: white; color: black; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">Express.js</li>
+        <li style=" background-color: #840000; color: white; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">Mongoose</li>
+        <li style=" background-color: #00002D; color: white; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">Dotenv</li>
+        <li style=" background-color: #F7A539; color: black; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">Cors</li>
+        <li style=" background-color: #72C949; color: #4D4B3D; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">Nodemon</li>
+        <li style=" background-color: #4930BD; color: white; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">Eslint</li>
+        <li style=" background-color: #192935; color: #E35B5B; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">Prettier</li>
+        <li style=" background-color: #64B8C2; color: #10292E; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">bcrypt</li>
+        <li style=" background-color: #CF38F7; color: black; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">jsonwebtoken</li>
+        <li style=" background-color: tomato; color: black; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">...etc</li>
+        </ol>
+    </div>
   
