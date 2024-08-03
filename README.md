@@ -1,6 +1,7 @@
 # assignment_3
 
-# Car- Washing-Project [variant-1] (<img src="https://png.pngtree.com/thumb_back/fw800/background/20240322/pngtree-a-man-washing-car-image_15682948.jpg" alt="isolated" width="full" style="margin: 0 auto;"/>)
+# Car- Washing-Project [variant-1] 
+<img src="https://media.istockphoto.com/id/156891556/vector/guy-washing-car-brands-battle.jpg?s=612x612&w=0&k=20&c=qAw47NCIHJyrMJkN6SxzOuftz0u3BegkAxpCBEhgsF4=" alt="isolated" width="full" style="margin: 0 auto;"/>
 
 # Project Title : Assignment_three
 
