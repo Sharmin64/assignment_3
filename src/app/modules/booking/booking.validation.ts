@@ -1,13 +1,16 @@
 import { z } from "zod";
-import { Types } from "mongoose";
-
-// Custom validation function for MongoDB ObjectId
-const isObjectId = (value: string) => Types.ObjectId.isValid(value);
+import mongoose, { Types } from "mongoose";
 
 const bookingValidation = z.object({
-  customer: z.string().refine(isObjectId),
-  service: z.string().refine(isObjectId),
-  slot: z.string().refine(isObjectId), // Validate against MongoDB ObjectId
+  customer: z?.string().refine((value) => {
+    return mongoose.Types.ObjectId.isValid(value as string);
+  }, "Invalid ObjectId"),
+  service: z.string().refine((value) => {
+    return mongoose.Types.ObjectId.isValid(value as string);
+  }, "Invalid ObjectId"),
+  slot: z.string().refine((value) => {
+    return mongoose.Types.ObjectId.isValid(value as string);
+  }, "Invalid ObjectId"), // Validate against MongoDB ObjectId
   vehicleType: z.enum([
     "car",
     "truck",

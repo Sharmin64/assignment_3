@@ -1,16 +1,26 @@
 import express from "express";
 import { authMiddleware } from "../../mddlewares/authMiddleware";
-import { isUser } from "../../mddlewares/isUser";
 import { BookingsControllers } from "./booking.controller";
+import isAuthenticate from "../../mddlewares/isAuthenticate";
 
 const router = express.Router();
 
-router.post("/", authMiddleware, isUser, BookingsControllers.createBookings);
-router.get("/", BookingsControllers.getAllBookings);
+router.post(
+  "/bookings",
+  authMiddleware,
+  isAuthenticate(["user"]),
+  BookingsControllers.createBookings
+);
+router.get(
+  "/bookings",
+  authMiddleware,
+  isAuthenticate(["admin"]),
+  BookingsControllers.getAllBookings
+);
 router.get(
   "/my-bookings",
   authMiddleware,
-  isUser,
+  isAuthenticate(["user"]),
   BookingsControllers.getMyBookings
 );
 

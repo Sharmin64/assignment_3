@@ -5,6 +5,7 @@ import AppError from "../../../errors/AppError";
 import httpStatus from "http-status";
 
 const createBookingData = async (rawData: AnyObject, userId: string) => {
+  const user = userId;
   const {
     serviceId,
     slotId,
@@ -21,7 +22,7 @@ const createBookingData = async (rawData: AnyObject, userId: string) => {
   }
 
   const bookingData: AnyObject = {
-    customer: userId,
+    customer: user,
     service: serviceId,
     slot: slotId,
     vehicleType,
