@@ -8,11 +8,11 @@ const router = Router();
 
 const moduleRoutes = [
   {
-    path: "/auth",
+    path: "/",
     route: UserRoute,
   },
   {
-    path: "/services",
+    path: "/",
     route: ServiceRoute,
   },
   {
@@ -20,7 +20,7 @@ const moduleRoutes = [
     route: SlotRoute,
   },
   {
-    path: "/bookings",
+    path: "/",
     route: BookingRoute,
   },
 ];

@@ -1,9 +1,13 @@
 class AppError extends Error {
-  public statusCode: number;
+  statusCode: number;
+  status: string;
+  isOperational: boolean;
 
   constructor(statusCode: number, message: string, stack = "") {
     super(message);
     this.statusCode = statusCode;
+    this.status = `${statusCode}`.startsWith("4") ? "false" : "Server error";
+    this.isOperational = true;
 
     if (stack) {
       this.stack = stack;

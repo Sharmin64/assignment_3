@@ -1,11 +1,16 @@
 import express from "express";
 import { availableSlots, createSlots } from "./slot.controller";
 import { authMiddleware } from "../../mddlewares/authMiddleware";
-import { isAdmin } from "../../mddlewares/isAdmin";
+import isAuthenticate from "../../mddlewares/isAuthenticate";
 
 const router = express.Router();
 
-router.post("/services/slots", authMiddleware, isAdmin, createSlots);
+router.post(
+  "/services/slots",
+  authMiddleware,
+  isAuthenticate(["admin"]),
+  createSlots
+);
 
 router.get("/slots/availability/:serviceId?", availableSlots);
 

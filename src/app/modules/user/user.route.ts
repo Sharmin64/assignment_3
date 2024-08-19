@@ -6,11 +6,11 @@ import UserZodValidationSchema from "./user.validation";
 const router = express.Router();
 
 router.post(
-  "/signup",
+  "auth/signup",
   validateRequest(UserZodValidationSchema),
   UserController.userSignup
 );
 
-router.post("/login", UserController.userLogin);
+router.post("auth/login", UserController.userLogin);
 
 export const UserRoute = router;
