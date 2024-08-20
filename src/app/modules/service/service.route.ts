@@ -6,24 +6,24 @@ import isAuthenticate from "../../mddlewares/isAuthenticate";
 const router = express.Router();
 
 router.post(
-  "/",
+  "/services",
   ServiceControllers.createService,
   authMiddleware,
   isAuthenticate(["admin"])
 );
-router.get("/", ServiceControllers.getAllServices);
+router.get("/services", ServiceControllers.getAllServices);
 
-router.get("/:id?", ServiceControllers.getSingleService);
+router.get("/services/:id?", ServiceControllers.getSingleService);
 
 router.put(
-  "/:id",
+  "/services/:id",
   ServiceControllers.updateService,
   authMiddleware,
   isAuthenticate(["admin"])
 );
 
 router.delete(
-  "/:id",
+  "/services/:id",
   ServiceControllers.deleteService,
   authMiddleware,
   isAuthenticate(["admin"])
