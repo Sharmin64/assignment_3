@@ -2,9 +2,9 @@ import { z } from "zod";
 
 const serviceValidationSchema = z.object({
   name: z.string(),
-  description: z.string({ message: "description must be string." }),
-  price: z.number({ message: "price must be number." }),
-  duration: z.number({ message: "duration must be number." }),
+  description: z.string(),
+  price: z.number(),
+  duration: z.number(),
 });
 
 export default serviceValidationSchema;

@@ -1,32 +1,22 @@
 import express from "express";
 import { ServiceControllers } from "./service.controller";
 import { authMiddleware } from "../../mddlewares/authMiddleware";
-import isAuthenticate from "../../mddlewares/isAuthenticate";
+import { isAdmin } from "../../mddlewares/isAdmin";
 
 const router = express.Router();
 
-router.post(
-  "/services",
-  ServiceControllers.createService,
-  authMiddleware,
-  isAuthenticate(["admin"])
-);
-router.get("/services", ServiceControllers.getAllServices);
+router.post("/", ServiceControllers.createService, authMiddleware, isAdmin);
+router.get("/", ServiceControllers.getAllServices);
 
-router.get("/services/:id?", ServiceControllers.getSingleService);
+router.get("/:id?", ServiceControllers.getSingleService);
 
-router.put(
-  "/services/:id",
-  ServiceControllers.updateService,
-  authMiddleware,
-  isAuthenticate(["admin"])
-);
+router.put("/:id", ServiceControllers.updateService, authMiddleware, isAdmin);
 
 router.delete(
-  "/services/:id",
+  "/:id",
   ServiceControllers.deleteService,
   authMiddleware,
-  isAuthenticate(["admin"])
+  isAdmin
 );
 
 export const ServiceRoute = router;

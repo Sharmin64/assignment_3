@@ -3,7 +3,7 @@
 # Car- Washing-Project [variant-1] 
 <img src="https://media.istockphoto.com/id/156891556/vector/guy-washing-car-brands-battle.jpg?s=612x612&w=0&k=20&c=qAw47NCIHJyrMJkN6SxzOuftz0u3BegkAxpCBEhgsF4=" alt="isolated" width="full" style="margin: 0 auto;"/>
 
-# Project Title : Assignment_three
+# Project Title : Assignment_3
 
 # project set up : 
 - clone this project from here: [-Github-] (https://github.com/Sharmin64/assignment_3.git)
@@ -47,14 +47,14 @@ npm run start:dev
   ## what I will provide 
 
 
-  ** Live link:-- https://car-washing-backend-project-2mpgngmu0-sharmin64s-projects.vercel.app/
+  ** Live link:-- https://assignment-3-pi-one.vercel.app/
   ** Github link:--https://github.com/Sharmin64/assignment_3
   ** Project presentation vedio: --  unable to make the vedio because of microphone issues of headphone
 
   ### *** Environment Variable ***
 
   - PORT= "5000"
-  - MONGODB_URI="mongodb+srv://car-washer:L3iFT6KSF319Fbxl@cluster0.xol1uc7.mongodb.net/car-washing-project?retryWrites=true&w=majority&appName=Cluster0"
+  - Mongodb uri-- connect to mongodb url 
 
 # Technologies I used in this project :
  <div style="">
@@ -73,10 +73,4 @@ npm run start:dev
         <li style=" background-color: tomato; color: black; display: flex;justify-content: center; align-items:center; border-radius: 5px; padding:5px; width:90px; height:14px; text-align:center; font-weight: bold; margin-bottom: 5px; margin-right: 3px">...etc</li>
         </ol>
     </div>
-
-
-
-
-    <!-- # DATABASE_URL=mongodb+srv://car-washer:L3iFT6KSF319Fbxl@cluster0.xol1uc7.mongodb.net/car-washing-project?retryWrites=true&w=majority&appName=Cluster0 
-# DATABASE_URL=mongodb+srv://car-washer:L3iFT6KSF319Fbxl@cluster0.xol1uc7.mongodb.net/car-washing-project?retryWrites=true&w=majority&appName=Cluster0
-   -->
+  

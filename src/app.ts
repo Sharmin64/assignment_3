@@ -1,9 +1,9 @@
-import express, { Application, Request, Response } from "express";
+import express, { Request, Response } from "express";
 import cors from "cors";
 import router from "./app/routes";
 import globalErrorHandler from "./app/mddlewares/globalErrorHandler";
 import notFoundRoute from "./app/mddlewares/notFoundRoute";
-const app: Application = express();
+const app = express();
 
 // parsers
 
@@ -13,7 +13,7 @@ app.use(cors());
 app.use("/api", router);
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World!");
+  res.send("Car Washing System is running on Server");
 });
 
 app.use(globalErrorHandler);
